@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #4b0082;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #4b0082;
+    }
+
+    section {
+      padding: 80px 50px 50px;
+      position: relative;
+    }
+
+    section::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 60%;
+      margin: 40px auto 0;
+      background: linear-gradient(to right, transparent, #4b0082, transparent);
+      border-radius: 50%;
+    }
+
+    .hero::after { display: none; }
+    #contact::after { display: none; }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      padding-top: 120px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #4b0082;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      color: #444;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #4b0082;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #6a0dad;
+      transform: translateY(-3px);
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .projects, .education, .activities, .achievements, .skills, .experience, .certifications {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      padding-bottom: 15px;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      margin-bottom: 10px;
+      color: #4b0082;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: rgba(255,255,255,0.2);
+      margin-top: 50px;
+      backdrop-filter: blur(10px);
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: none;
+      height: 150px;
+    }
+
+    form button {
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background: #4b0082;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: #6a0dad;
+      transform: translateY(-3px);
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .progress-bar {
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+
+    .progress {
+      height: 10px;
+      background: #4b0082;
+      width: 0;
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#activities">Activities</a>
+      <a href="#contact">Contact</a>
+      <a href="#social links">social links</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero"> 
+  <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 300px;">
+      <h2>Hello, I'm Deepika</h2>
+      <p>A passionate Web Developer who loves building beautiful and functional websites.</p>
+      <a href="#projects" class="btn">See My Work</a>
+      <a href="C:\Users\paila\Downloads\deepika resume.pdf" download class="btn">Download Resume</a>
+    </div>
+    
+    <div style="flex: 1; min-width: 300px; text-align: center; margin-top: 20px;">
+      <img src="C:deppu.jpg" alt="Profile" width="250" height="250" style="border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+    </div>
+  </div>
+</section>
+  <section id="projects">
+    <h2 style="text-align:center; color:#4b0082;">My Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <img src="https://source.unsplash.com/600x400/?website" alt="Project">
+        <div class="card-content">
+          <h3>Project One</h3>
+          <p> I am completed in calculator app project in python programming </p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/600x400/?code" alt="Project">
+        <div class="card-content">
+          <h3>Project Two</h3>
+          <p>I am completed in alarm clock app  project in html,css,js .</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/600x400/?design" alt="Project">
+        <div class="card-content">
+          <h3>Project Three</h3>
+          <p> I am completed in real time chat appliaction project in java .</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2 style="text-align:center; color:#4b0082;">Educational Background</h2>
+    <div class="education">
+      <div class="card"><div class="card-content"><h3>Btech-AI&DS</h3><p> Satya Institue of Technology and mangement | 2023 - 2027</p></div></div>
+      <div class="card"><div class="card-content"><h3>Intermediate-MPC</h3><p>Satya Sai Junior college | 2021 - 2023</p></div></div>
+
+      <div class="card"><div class="card-content"><h3>High School</h3><p>vivekanandha high School | 2019 - 2020</p></div></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 style="text-align:center; color:#4b0082;">Skills</h2>
+    <div class="skills">
+      <div class="card"><div class="card-content"><h3>HTML & CSS</h3><div class="progress-bar"><div class="progress" style="width: 95%"></div></div></div></div>
+      <div class="card"><div class="card-content"><h3>JavaScript</h3><div class="progress-bar"><div class="progress" style="width: 85%"></div></div></div></div>
+      <div class="card"><div class="card-content"><h3>Python</h3><div class="progress-bar"><div class="progress" style="width: 80%"></div></div></div></div>
+      <div class="card"><div class="card-content"><h3>React</h3><div class="progress-bar"><div class="progress" style="width: 70%"></div></div></div></div>
+     <div class="card"><div class="card-content"><h3>java</h3><div class="progress-bar"><div class="progress" style="width: 70%"></div></div></div></div>
+      <div class="card"><div class="card-content"><h3>node.js</h3><div class="progress-bar"><div class="progress" style="width: 70%"></div></div></div></div>
+<div class="card"><div class="card-content"><h3>mongodb</h3><div class="progress-bar"><div class="progress" style="width: 70%"></div></div></div></div>
+<div class="card"><div class="card-content"><h3>SQL</h3><div class="progress-bar"><div class="progress" style="width: 70%"></div></div></div></div>
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 style="text-align:center; color:#4b0082;">Experience</h2>
+    <div class="experience">
+      <div class="card"><div class="card-content"><h3>Web Developer Intern</h3><p>ABC Tech | June 2023 - Aug 2023<br>Worked on frontend UI/UX and improved website performance.</p></div></
+      <div class="card"><div class="card-content"><h3>Freelance Developer</h3><p>2021 - Present<br>Built responsive websites for small businesses and startups.</p></div></div>
+     <div class="card"><div class="card-content"><h3>python developer</h3><p>2023 - pinnacle labs intrenship<br>Built responsive websites for small businesses and startups.</p></div></div>
+       <div class="card"><div class="card-content"><h3>Frontend Developer</h3><p>2024 -future intrenship<br>Built responsive websites for small businesses and startups.</p></div></div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2 style="text-align:center; color:#4b0082;">Certifications</h2>
+    <div class="certifications">
+      <div class="card"><div class="card-content"><h3>AWS Cloud Practitioner</h3><p>Amazon Web Services | 2023</p></div></div>
+      <div class="card"><div class="card-content"><h3>Full Stack Web Development</h3><p>Coursera | 2022</p></div></div>
+     <div class="card"><div class="card-content"><h3>Roboticst</h3><p>Talent battle| 2024</p></div></div>
+     <div class="card"><div class="card-content"><h3>Internet of Things</h3><p> Talent battle | 2024</p></div></div>
+     <div class="card"><div class="card-content"><h3> AI</h3><p>Infyosis springboard | 2025</p></div></div>
+     <div class="card"><div class="card-content"><h3> python programming</h3><p>Infyosis springboard | 2024</p></div></div>
+     <div class="card"><div class="card-content"><h3>  fullstack Development</h3><p>Aajhub | 2025</p></div></div>
+  </section>
+
+  <section id="achievements">
+    <h2 style="text-align:center; color:#4b0082;">Academic Achievements</h2>
+    <div class="achievements">
+      <div class="card"><div class="card-content"><h3>Dean’s List</h3><p>Awarded for outstanding academic performance in 2021 and 2022.</p></div></div>
+      <div class="card"><div class="card-content"><h3>Scholarship Winner</h3><p>Received merit-based scholarship for consistent excellence.</p></div></div>
+      <div class="card"><div class="card-content"><h3>Best Project Award</h3><p>Recognized for creating the best final-year project in 2023.</p></div></div>
+      <div class="card"><div class="card-content"><h3>Top Coder</h3><p>Ranked in top 5% of national programming contest participants.</p></div></div>
+      <div class="card"><div class="card-content"><h3>Research Publication</h3><p>Co-authored a research paper published in an international journal.</p></div></div>
+      <div class="card"><div class="card-content"><h3>Innovation Challenge</h3><p>Winner of inter-university innovation challenge in 2022.</p></div></div>
+      <div class="card"><div class="card-content"><h3>ncc B certificate</h3><p>Achievement of  national cadet corps in 2023</p></div></div>
+       <div class="card"><div class="card-content"><h3>national science day</h3><p>Winner  science celebrations in 2023.</p></div></div>
+      <div class="card"><div class="card-content"><h3>NCC annual Training camp achievement</h3><p>Winner of training camp in 2023.</p></div></div>
+    </div>
+  </section>
+
+  <section id="activities">
+    <h2 style="text-align:center; color:#4b0082;">Extra-Curricular Activities</h2>
+    <div class="activities">
+      <div class="card"><div class="card-content"><h3>Coding Club</h3><p>Organized hackathons and coding competitions at university.</p></div></div>
+      <div class="card"><div class="card-content"><h3>Sports Team</h3><p>Represented university football team in inter-college tournaments.</p></div></div>
+      <div class="card"><div class="card-content"><h3>Volunteering</h3><p>Active member in community service and charity events.</p></div></div>
+      <div class="card"><div class="card-content"><h3>Music Band</h3><p>Performed as guitarist in university music band events.</p></div></div>
+      <div class="card"><div class="card-content"><h3>Drama Club</h3><p>Acted in multiple stage plays and cultural festivals.</p></div></div>
+      <div class="card"><div class="card-content"><h3>Photography</h3><p>Covered events as part of university photography club.</p></div></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 style="text-align:center; color:#4b0082;">Contact Me</h2>
+    <p style="text-align:center; max-width:600px; margin:0 auto; margin-bottom:30px;">Feel free to get in touch for collaborations, projects, or just to say hello! You can reach me at <b>your.email@example.com</b> or use the form below.</p>
+    <form id="contact-form">
+      <input type="text" name="user_name" placeholder="Pamoti Deepika" required>
+      <input type="email" name="user_email" placeholder="Pamotideepika@gmail.com" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+<section id="social-links">
+  <h2 style="text-align:center; color:#4b0082;">Social Links</h2>
+  <p style="text-align:center; max-width:600px; margin:0 auto; margin-bottom:30px;">
+    Feel free to get in touch for collaborations, projects, or just to say hello!  
+    You can reach me at <button><a href="https://github.com/account"github</a> </button>or use the links below.
+  </p>
+<div style="text-align:center;">
+  <a href="https://github.com/account" target="_blank" style="margin-right:15px;">
+  <a href="https://www.linkedin.com/in/deepika-pamoti-6a89a62a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="margin-right:15px;">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="30" height="30">
+  </a>
+</div>
+
+
+  </div>
+  <footer>
+    <p>© 2025 My Portfolio | Designed by deepika</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("YOUR_PUBLIC_KEY");
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        .then(function() {
+          alert('Message Sent Successfully!');
+        }, function(error) {
+          alert('Failed to send message. Please try again later.');
+        });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
